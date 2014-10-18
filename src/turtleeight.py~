@@ -38,7 +38,7 @@ def moveTurtle():
         command.angular.x = 0
         command.angular.y = 0
         command.angular.z = omega
-        #print '\nPublishing'
+
         pub.publish(command)
         rate.sleep()
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     try:
         rospy.wait_for_service('turtle1/teleport_absolute')
         turtle_sp = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
-        turtle_sp = (20,5,0)
+        turtle_sp = (10,5,0)
         rospy.init_node('steering_turtle', anonymous=True)
         moveTurtle()
     except rospy.ROSInterruptException: pass

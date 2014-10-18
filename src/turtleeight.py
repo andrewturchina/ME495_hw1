@@ -38,7 +38,7 @@ def moveTurtle():
         command.angular.x = 0
         command.angular.y = 0
         command.angular.z = omega
-        #print '\nPublishing'
+
         pub.publish(command)
         rate.sleep()
 
